@@ -46,14 +46,14 @@ Chocolate <- function(M,r,c){
 Chocolate(matrix(c(1,2,1,1,2,1,1,2,1), nrow=3,ncol=3,byrow = TRUE),1,1)
 
 #Task 4
-HanioTowers <- function(n, fromPeg, toPeg){
+HanoiTowers <- function(n, fromPeg, toPeg){
   if (n==1){
-    #ouput
+    print(paste("Move disc from peg",fromPeg,"to Peg",toPeg,sep=" "))
     return()}
-  unusedPeg <- (6 - fromPeg - toPeg)
+  unusedPeg <- 6 - fromPeg - toPeg
   HanoiTowers(n-1, fromPeg, unusedPeg)
-  #ouput
+  print(paste("Move disc from peg",fromPeg,"to Peg",toPeg,sep=" "))
   HanoiTowers(n-1,unusedPeg,toPeg)
   return()
 }
-
+HanoiTowers(3,1,3)
